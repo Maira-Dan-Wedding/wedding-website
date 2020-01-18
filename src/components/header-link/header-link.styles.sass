@@ -1,0 +1,59 @@
+//COLOR SETUP
+$color-header-main-link: #281f16
+$color-header-sec-link: #775738
+$color-header-border: #cead97
+
+
+//COMPONENT RULES    
+.header-link-box
+    display: inline-block
+    padding: 2rem 1rem
+    position: relative
+
+    .header-link
+        display: inline-block
+        width: 100%
+        height: 100%
+        padding: 1rem
+        color: $color-header-main-link
+        text-decoration: none 
+        font-size: 120%
+        border: 3px hidden $color-header-border
+        transition: border .2s ease-in-out
+
+
+        &:hover,
+        &:active
+            border-bottom: 3px solid $color-header-border
+
+        &:hover .dropdown
+            display: block
+
+        .dropdown-icon
+            transform: rotate(90deg)
+            display: inline-block
+
+        .link-en
+            display: block
+            font-size: 70%
+            text-align: center
+            color: $color-header-sec-link
+
+.main-link .header-link 
+    padding: 0 3rem 
+    font-family: 'Pinyon Script', cursive
+    color: #8a6f53
+    font-size: 500%
+    transition: color .2s ease-in-out
+
+    &:hover,
+    &:active
+        color: #cc9356
+        border: none
+
+.header-link-box-sticky
+    padding: 0rem
+
+    .header-link
+        padding: 1.8rem 3rem .5rem 3rem
+        border-bottom: 3px solid brown

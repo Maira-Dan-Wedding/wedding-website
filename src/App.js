@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useRef, useEffect} from 'react';
+import { Route, Switch } from 'react-router-dom'; 
+
+import './App.styles.sass';
+
+import Header from './components/header/header.component'; 
+import Homepage from './pages/homepage/homepage.component';
+import Rsvp from './pages/rsvp/rsvp.component';
 
 function App() {
+
+  const [isSticky, setSticky] = useState(false);
+  const ref = useRef(null);
+
+  const handleScroll = () => {
+      setSticky(ref.current.getBoundingClientRect().top <= -120);
+  };
+
+  useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+         window.removeEventListener('scroll', () => handleScroll);
+      };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div ref={ref} className="App">
+      <Header isSticky={isSticky} />
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/rsvp" component={Rsvp} />
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;
