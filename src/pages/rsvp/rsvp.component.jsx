@@ -1,17 +1,44 @@
-import React from 'react'; 
+import React, { useState } from 'react'; 
 
 import './rsvp.styles.sass'; 
 
+import {RSVP_LIST, HERO, FORM_COPY} from './rsvp.data'; 
+import {toCamelCase} from './rsvp.utils'; 
+
 import CoverImage from '../../components/cover-image/cover-image.component';
 import Form from '../../components/form/form.component'
+import Popup from '../../components/popup/popup.component';
 
 const Rsvp = () => {
-    const hero = {
-        imgUrl: "https://lh3.googleusercontent.com/YZMJY9NMAQvAY8Rour1GckQ0UeBuXRsrQHajVjRfYjCBSY8pnpUiCRlluE1qto103695ucb8E5-rL2__KqY7bGBpdA9W5edrp8NXemF4K53K1LFeqAp08ENNmwQOrIzcwbEOUb-jnUOa4dRJ2YQMZGZntQA18LUQB8B4yj6I-H0TEf0wJa6lCPPuMCJ4kNdftNOFyYzieLVRpd7u0WlTd6BwEkEkcwXfVF15ZunWQJy0TCCI-qx-IF1rb1RSD77sudDGDyo6QfF_7p920ghIb5E77Ypo4C3y04do310FQK4h-4ZJ_agdekgHDcRkKh3eIXkDu6Bky5mq4Lgp1U-a4lNtIDiwiisK3Jkow1s49F0AKkIBtgt-j_bFUjTvA1NjjDX-0XBwkVFmKkGT9h_v85ERdiJLfYrqhTgH_ARK6TOpa4U72-Jvil-QePYpOeWnw4rs_YtmSZzNP3-MLcqmQppROxtw9Mmg0LndcS9g0tshkuU8b4yoxChWE-dvaTvBMKQzu8OjDW26tk5iv1-_zApUH8fxa2YWvsoXR6OSLsGuI4URrV38W6cLE2LrEaKCm8wZ5IXuHwMjNbDzeIhwEitpIVJPy9ZutYnz4yIK_DYkWeLMeeKhpbMhCgybbvAl3fM4nvUDDL1nUFMlMvA9i_L0670Q_WE0lJ1uQoMjNzCBoL2mB1YiQiAXA92_vW9TYhd1SHUae76PQVp6Ry6JK0vAKp3YPwrmk-8EL_TMsTG4RlI=w852-h638-no",
-        height: "40vh",
-        position: "bottom",
-        filter: "rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)", 
-    }
+    const [rsvpList, setRsvpList] = useState(RSVP_LIST);
+    const [hero] = useState(HERO);
+    const [formCopy] = useState(FORM_COPY)
+    const [name, setName] = useState("");
+    const [popupStatus, setPopupStatus] = useState(null);
+    
+    const handleChange = e => {
+        const { value } = e.target;
+        setName(value);
+    };
+
+    const updateRsvp = name => {
+        setRsvpList({ ...rsvpList, [name]: true })
+        return setPopupStatus("SUCCESS")
+    };
+
+    const resetPopup = () => setPopupStatus(null)
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        const nameCamel = toCamelCase(name);
+
+        rsvpList[nameCamel] === undefined ? 
+            setPopupStatus("ERROR") : (
+            rsvpList[nameCamel] ? setPopupStatus("CONFIRMED") : updateRsvp(nameCamel)
+        );
+
+        setName("");
+    };
 
     return(
         <div className="rsvp-page">
@@ -23,11 +50,21 @@ const Rsvp = () => {
                 filter={hero.filter}
             />
             <Form 
-                title="R.S.V.P"
-                subtitle="Instruções || Instructions"
-                instructionPt="Preencha, respectivamente, o seu primeiro e último nome completos, com um espaço de separação."
-                instructionEn="Fill out your full first and last name respectively, with one space of separation."
+                title={formCopy.title}
+                subtitle={formCopy.subtitle}
+                instructionPt={formCopy.instructionsPt}
+                instructionEn={formCopy.instructionsEn}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                name={name}
             />
+            {popupStatus ? (
+                <Popup 
+                    status={popupStatus}
+                    resetPopup={resetPopup}
+                />
+            ) : null }
+                
         </div>
     );
 };

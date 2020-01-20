@@ -1,3 +1,7 @@
+//IMPORTING VARIABLES 
+@import '../../configs/styles/breakpoints'
+
+//COMPONENT RULES
 .dropdown
     display: none
     list-style: none
@@ -7,4 +11,29 @@
     left: -12%
     border-radius: 10px
     transition: all 0.3s ease-in
+
+    @media only screen and (max-width: $breakpoint-mobile-header)
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        display: block
+        background-color: white
+        z-index: 1000
+
+    .dropdown-close-icon 
+        display: none
+        
+        @media only screen and (max-width: $breakpoint-mobile-header)
+            display: block
+            text-align: left 
+            font-size: 130%
+
+
+
+
+
+        
+
     

@@ -8,7 +8,6 @@ import Homepage from './pages/homepage/homepage.component';
 import Rsvp from './pages/rsvp/rsvp.component';
 
 function App() {
-
   const [isSticky, setSticky] = useState(false);
   const ref = useRef(null);
 
@@ -17,10 +16,10 @@ function App() {
   };
 
   useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener("scroll", handleScroll);
 
       return () => {
-         window.removeEventListener('scroll', () => handleScroll);
+         window.removeEventListener("scroll", () => handleScroll);
       };
   }, []);
 

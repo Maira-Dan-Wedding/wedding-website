@@ -1,3 +1,6 @@
+//IMPORTING VARIABLES
+@import '../../configs/styles/breakpoints'
+    
 //COLOR SETUP
 $color-header-main-link: #281f16
 $color-header-sec-link: #775738
@@ -10,6 +13,10 @@ $color-header-border: #cead97
     padding: 2rem 1rem
     position: relative
 
+    @media only screen and ( max-width: $breakpoint-mobile-header )
+        display: block
+        position: static
+
     .header-link
         display: inline-block
         width: 100%
@@ -21,10 +28,20 @@ $color-header-border: #cead97
         border: 3px hidden $color-header-border
         transition: border .2s ease-in-out
 
+        @media only screen and (max-width: $breakpoint-large-desktop)
+            font-size: 90%
+        
+        @media only screen and (max-width: $breakpoint-mobile-header)
+            text-align: center
+            font-size: 200%
+
 
         &:hover,
         &:active
             border-bottom: 3px solid $color-header-border
+
+            @media only screen and (max-width: $breakpoint-mobile-header)
+                border: none
 
         &:hover .dropdown
             display: block
@@ -33,11 +50,18 @@ $color-header-border: #cead97
             transform: rotate(90deg)
             display: inline-block
 
+        .dropdown-hidden
+            @media only screen and (max-width: $breakpoint-mobile-header)
+                display: none !important
+
         .link-en
             display: block
             font-size: 70%
             text-align: center
             color: $color-header-sec-link
+
+            @media only screen and (max-width: $breakpoint-mobile-header)
+                margin-top: .8rem
 
 .main-link .header-link 
     padding: 0 3rem 
@@ -46,14 +70,30 @@ $color-header-border: #cead97
     font-size: 500%
     transition: color .2s ease-in-out
 
+    @media only screen and (max-width: $breakpoint-large-desktop)
+        font-size: 300%
+
     &:hover,
     &:active
         color: #cc9356
         border: none
 
+.home-link
+    display: none
+    
+    @media only screen and (max-width: $breakpoint-mobile-header)
+        display: block
+        
 .header-link-box-sticky
     padding: 0rem
 
     .header-link
         padding: 1.8rem 3rem .5rem 3rem
         border-bottom: 3px solid brown
+
+
+
+
+
+
+

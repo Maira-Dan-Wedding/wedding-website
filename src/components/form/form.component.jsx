@@ -1,22 +1,12 @@
-import React, { useState } from 'react'; 
+import React from 'react'; 
 
 import Container from '@material-ui/core/Container'
 import FormInput from '../form-input/form-input.component'; 
+import CustomButton from '../custom-button/custom-button.component'; 
 
 import './form.styles.sass'; 
 
-const Form = ({title, subtitle, instructionPt, instructionEn}) => {
-    const [name, setName] = useState("") 
-
-    const handleChange = e => {
-        const {value} = e.target;
-        setName(value);
-
-    };
-
-    const handleSubmit = e => {
-        e.preventDefalt();
-    }
+const Form = ({title, subtitle, instructionPt, instructionEn, handleChange, handleSubmit, name}) => {
 
     return(
         <div className="form">
@@ -38,6 +28,11 @@ const Form = ({title, subtitle, instructionPt, instructionEn}) => {
                         type="text"
                         value={name}
                     />
+                    <CustomButton
+                        type="submit"
+                    >
+                        -->
+                    </CustomButton>
                 </form>
             </Container>
 

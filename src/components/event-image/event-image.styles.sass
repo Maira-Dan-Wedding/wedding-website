@@ -1,3 +1,6 @@
+//IMPORTING VARIABLES 
+@import '../../configs/styles/breakpoints'
+    
 //COLOR SETUP
 
 //Greens
@@ -16,6 +19,10 @@ $color-light-red: #fab1a0
     width: 100%
     min-height: 80vh
     position: relative
+
+    @media only screen and ( max-width: $breakpoint-small-desktop )
+        min-height: 50vh
+
     
 .event-image 
     @extend  %container-setup
@@ -39,6 +46,11 @@ $color-light-red: #fab1a0
         width: 50vh
         overflow: hidden
         border-radius: 50%
+
+        @media only screen and ( max-width: $breakpoint-small-desktop )
+            width: 40vh
+            height: 40vh
+            
 
         img 
             height: 100%

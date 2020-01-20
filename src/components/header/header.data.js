@@ -1,20 +1,27 @@
 const HEADER_DATA = [
     {
         id: 1,
+        linkUrl: "",
+        linkNamePt: "Home",
+        linkNameEn: "Home",
+        isMainLink: false
+    },
+    {
+        id: 2,
         linkUrl: "#schedule",
         linkNamePt: "Programação",
         linkNameEn: "schedule",
         isMainLink: false
     },
     {
-        id: 2,
+        id: 3,
         linkUrl: "#travel",
         linkNamePt: "Viagem",
         linkNameEn: "Travel",
         isMainLink: false
     },
     {
-        id: 3,
+        id: 4,
         linkUrl: "#",
         linkNamePt: "Dicas",
         linkNameEn: "Tips",
@@ -38,21 +45,21 @@ const HEADER_DATA = [
         isMainLink: false
     },
     {
-        id: 4,
+        id: 5,
         linkUrl: "",
         linkNamePt: "Dan & Maíra",
         linkNameEn: "",
         isMainLink: true
     },
     {
-        id: 5,
+        id: 6,
         linkUrl: "#",
         linkNamePt: "Lista de Presentes",
         linkNameEn: "Registry",
         isMainLink: false
     },
     {
-        id: 6,
+        id: 7,
         linkUrl: "rsvp",
         linkNamePt: "R.S.V.P",
         linkNameEn: "",

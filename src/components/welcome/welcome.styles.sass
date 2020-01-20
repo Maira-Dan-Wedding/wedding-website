@@ -1,3 +1,6 @@
+//IMPORTING VARIABLES 
+@import '../../configs/styles/breakpoints'
+    
 //COLOR SETUP
 $color-welcome-background: #e8d8cd
 $color-welcome-subtitle: #5b3b1a
@@ -27,6 +30,10 @@ $color-welcome-border: #ccb7aa
     .box
         margin-top: 2rem
         padding: 1rem 9rem
+        margin-bottom: 2rem
+
+        @media only  screen and ( max-width: $breakpoint-large-desktop  )
+            padding: 1rem 2rem 
 
         .copy
             color: $color-welcome-copy

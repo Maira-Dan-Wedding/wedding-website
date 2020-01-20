@@ -1,3 +1,7 @@
+//IMPORT VARIABLES
+@import '../../configs/styles/breakpoints'
+
+//COMPONENT RULES
 .header
     position: absolute
     width: 100%
@@ -7,6 +11,11 @@
     justify-content: center
     z-index: 999
     transition: all .2s ease-in
+
+    //Mobile Header
+    @media only screen and ( max-width: $breakpoint-mobile-header )
+        position: fixed
+        height: 100%
 
     .inner-header 
         display: inline-block
@@ -37,6 +46,9 @@
             &:active
                 color: #cc9356
                 border: none
+        @media only screen and ( max-width: $breakpoint-mobile-header )
+            display: block
+
 
 .sticky
     position: fixed
@@ -45,3 +57,21 @@
 
     .inner-header
         padding: 0
+
+//Mobile Header
+@media only screen and ( max-width: $breakpoint-mobile-header )
+    .header
+        position: fixed
+        top: 0
+        background: brown
+
+        .inner-header
+            padding: 0
+
+    .header-hidden
+        display: none
+
+
+
+
+

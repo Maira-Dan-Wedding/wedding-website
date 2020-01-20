@@ -1,3 +1,8 @@
+//IMOPRTING VARIABLES
+@import '../../configs/styles/breakpoints'
+
+
+//COMPONENT RULES    
 .event
     min-height: 80vh
     width: 100%
@@ -7,5 +12,10 @@
         grid-template-columns: 1fr 1fr
         position: relative
         min-height: 80vh
+
+        @media only screen and ( max-width: $breakpoint-small-desktop  )
+            display: flex
+            flex-direction: column
+        
 
         

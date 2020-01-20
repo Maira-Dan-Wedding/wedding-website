@@ -1,35 +1,32 @@
-import React from 'react'; 
+import React, { useState } from 'react'; 
 import { withRouter } from 'react-router-dom'; 
 
 import Dropdown from '../dropdown/dropdown.component'
 
 import './header-link.styles.sass'; 
 
-const HeaderLink = ({linkUrl, linkNamePt, linkNameEn, spacingLeft, spacingRight, dropdownList, isMainLink, match, history, isSticky}) => {
+const HeaderLink = ({linkUrl, linkNamePt, linkNameEn, dropdownList, isMainLink, match, history, isSticky, toggleNav}) => {
+    const[isDropdownHidden, setIsDropdownHidden] = useState(true)
 
-    const linkClassName = () => {
-        let className = ""
-        if(!isSticky && !isMainLink) className = "header-link-box"
-        if(isMainLink) {
-            isSticky ? className = "header-link-box header-link-box-sticky main-link" : className = "header-link-box main-link"
-        };
-        if(isSticky && !isMainLink) className = "header-link-box header-link-box-sticky"
-
-        return className;
+    const onClick = () => {
+        toggleNav();
+        return history.push(`${match.url}${linkUrl}`)
     };
 
+    const toggleDropdown = () => setIsDropdownHidden(!isDropdownHidden);
+
     return (
-        <li className={linkClassName()}>
+        <li className={`header-link-box ${isSticky ? "header-link-box-sticky" : ""} ${isMainLink ? "main-link" : ""} ${linkNameEn === "Home" ? "home-link" : "" }`}>
            {dropdownList ? ( 
                <div>
-                    <div className="header-link" onClick={() => history.push(`${match.url}${linkUrl}`)}>
+                    <div className="header-link" onClick={toggleDropdown}>
                         {linkNamePt} <span className="dropdown-icon">&rsaquo;</span>
                         <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
-                        <Dropdown links={dropdownList} />
+                        <Dropdown links={dropdownList}  hidden={isDropdownHidden} toggleDropdown={toggleDropdown} />
                     </div>
                 </div>
             ) : (
-                <div className="header-link" onClick={() => history.push(`${match.url}${linkUrl}`)}>
+                <div className="header-link" onClick={onClick}>
                     {linkNamePt}
                     <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
                 </div>
