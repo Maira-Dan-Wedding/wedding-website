@@ -1,5 +1,6 @@
 //IMPORTING VARIABLES
 @import '../../configs/styles/breakpoints'
+@import '../../configs/styles/colors'
     
 //COLOR SETUP
 $color-header-main-link: #281f16
@@ -89,7 +90,11 @@ $color-header-border: #cead97
 
     .header-link
         padding: 1.8rem 3rem .5rem 3rem
-        border-bottom: 3px solid brown
+        border-bottom: 5px solid $color-lighter-red
+
+        &:hover,
+        &:active
+            border-bottom: 5px solid $color-sticky-header-border
 
 
 

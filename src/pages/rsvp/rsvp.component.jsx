@@ -1,8 +1,9 @@
 import React, { useState } from 'react'; 
+import { firestore } from '../../firebase/firebase.utils'; 
 
 import './rsvp.styles.sass'; 
 
-import {RSVP_LIST, HERO, FORM_COPY} from './rsvp.data'; 
+import {HERO, FORM_COPY} from './rsvp.data'; 
 import {toCamelCase} from './rsvp.utils'; 
 
 import CoverImage from '../../components/cover-image/cover-image.component';
@@ -10,34 +11,48 @@ import Form from '../../components/form/form.component'
 import Popup from '../../components/popup/popup.component';
 
 const Rsvp = () => {
-    const [rsvpList, setRsvpList] = useState(RSVP_LIST);
     const [hero] = useState(HERO);
     const [formCopy] = useState(FORM_COPY)
-    const [name, setName] = useState("");
+    const [name, setName] = useState("null");
     const [popupStatus, setPopupStatus] = useState(null);
-    
+
     const handleChange = e => {
         const { value } = e.target;
         setName(value);
-    };
-
-    const updateRsvp = name => {
-        setRsvpList({ ...rsvpList, [name]: true })
-        return setPopupStatus("SUCCESS")
     };
 
     const resetPopup = () => setPopupStatus(null)
 
     const handleSubmit = e => {
         e.preventDefault();
+
         const nameCamel = toCamelCase(name);
+        const guestRef = firestore.collection("guests").doc(nameCamel);
 
-        rsvpList[nameCamel] === undefined ? 
-            setPopupStatus("ERROR") : (
-            rsvpList[nameCamel] ? setPopupStatus("CONFIRMED") : updateRsvp(nameCamel)
-        );
+        return firestore.runTransaction(transaction => {
+            return transaction.get(guestRef).then(snapshot => {
+                if (snapshot.exists) {
+                    const guestData = snapshot.data()
 
-        setName("");
+                    if (guestData.rsvped) {
+                        setPopupStatus("SUCCESS")
+                    } else {
+                        transaction.update(guestRef, { rsvped: true });
+                        setPopupStatus("SUCCESS")
+                    }
+
+                } else {
+                    setPopupStatus("ERROR")
+                }
+            })
+        }).then( () => {
+            setName("");
+        }).catch(e => {
+            console.log(e);
+            setPopupStatus("ERROR")
+
+        })
+
     };
 
     return(

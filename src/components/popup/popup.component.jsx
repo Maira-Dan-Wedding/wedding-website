@@ -11,10 +11,9 @@ const useStyles = makeStyles(theme => ({
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: 400,
-        backgroundColor: "brown",
-        border: "3px solid black",
-        padding: "1rem",
+        width: 600,
+        backgroundColor: "#7bed9f",
+        padding: "2rem",
         borderRadius: "10px"
     }
 }));
@@ -38,32 +37,26 @@ const Popup = ({status, resetPopup}) => {
                     open={open}
                     onClose={handleClose}
                 >
-                    <div className={classes.paper}>
-                        <h2 id="simple-modal-title">ERROR MESSAGE</h2>
-                        <p id="simple-modal-description">
-                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                        </p>
+                    <div className={`${classes.paper} error-popup`}>
+                        <h2 id="simple-modal-title">OOPS...</h2>
+                        <div className="copy">
+                            <p className="paragraph popup-subtitle-pt">Algo deu errado!</p>
+                        </div>
+                        <div className="copy">
+                            <p className="paragraph popup-subtitle-en">Something went wrong!</p>
+                        </div>
+
+                        <div className="copy">
+                            <p className="paragraph popup-instructions-pt">Verifique se inseriu o nome como especificado nas instruções. Caso o erro persista, por favor envie um email para <span className="popup-email">carneirosmairaedan@gmail.com </span></p>
+                        </div>
+                        <div className="copy">
+                            <p className="paragraph popup-instructions-en">Make sure that you have followed the RSVP instructions. If the error persist, please send us an email at <span className="popup-email">carneirosmairaedan@gmail.com </span></p>
+                        </div>
+
                     </div>
                 </Modal>
             )
         
-        case "CONFIRM":
-            return (
-                <Modal
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                    open={open}
-                    onClose={handleClose}
-                >
-                    <div className={classes.paper}>
-                        <h2 id="simple-modal-title">ALREADY RSVPED</h2>
-                        <p id="simple-modal-description">
-                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                        </p>
-                    </div>
-                </Modal>
-            )
-
         case "SUCCESS":
             return (
                 <Modal
@@ -72,11 +65,21 @@ const Popup = ({status, resetPopup}) => {
                     open={open}
                     onClose={handleClose}
                 >
-                    <div className={classes.paper}>
-                        <h2 id="simple-modal-title">CONGRATULATIONS</h2>
-                        <p id="simple-modal-description">
-                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                        </p>
+                    <div className={`${classes.paper} success-popup`}>
+                        <h2 id="simple-modal-title">CONFIRMADO || RSVPED</h2>
+                        <div className="copy">
+                            <p className="paragraph popup-subtitle-pt">Obrigado por confirmar à sua presença, ela é importante!</p>
+                        </div>
+                        <div className="copy">
+                            <p className="paragraph popup-subtitle-en">Thank you for rsvping. It means a lot to us!</p>
+                        </div>
+
+                        <div className="copy">
+                            <p className="paragraph popup-instructions-pt"></p>
+                        </div>
+                        <div className="copy">
+                            <p className="paragraph popup-instructions-en"></p>
+                        </div>
                     </div>
                 </Modal>
             )
