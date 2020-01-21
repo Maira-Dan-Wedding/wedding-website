@@ -1,14 +1,15 @@
 //IMPORTING VARIABLES 
 @import '../../configs/styles/breakpoints'
+@import '../../configs/styles/colors'
 
 //COMPONENT RULES
 .dropdown
     display: none
     list-style: none
     position: absolute
-    padding: 1rem
-    background-color: brown
-    left: -12%
+    background-color: $color-header-dropdown-bg
+    padding: .5rem 0 
+    left: -16%
     border-radius: 10px
     transition: all 0.3s ease-in
 
@@ -19,16 +20,51 @@
         width: 100%
         height: 100%
         display: block
-        background-color: white
+        background-color: $color-darker-green
         z-index: 1000
+        padding-top: 2rem
+    
+
+    .dropdown-link
+        color: $color-header-dropdown-label
+        border-bottom: 1px solid rgba(187, 141, 86, 0.5)
+        background-color: #d3954a
+        padding: 1rem 1.5rem
+        cursor: pointer
+
+        &:hover,
+        &:active
+            background: #c7985e
+
+        @media only screen and (max-width: $breakpoint-mobile-header)
+            background: $color-darker-green
+            border-bottom: none
+        
 
     .dropdown-close-icon 
         display: none
-        
+
         @media only screen and (max-width: $breakpoint-mobile-header)
             display: block
             text-align: left 
-            font-size: 130%
+            font-size: 150%
+            margin-bottom: 2rem
+            padding-left: 3rem
+            color: $color-mobile-header-icon-green
+
+.dropdown-sticky
+    left: 0 
+    border-radius: 0
+    z-index: 1000
+    background: $color-lighter-red
+
+    @media only screen and (max-width: $breakpoint-mobile-header)
+        background: $color-darker-green
+
+    .dropdown-link
+        &:hover
+        &:active
+            background-color: $color-darker-red
 
 
 

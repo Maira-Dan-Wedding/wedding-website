@@ -1,5 +1,6 @@
 //IMPORTING VARIABLES
 @import '../../configs/styles/colors'
+@import '../../configs/styles/breakpoints'
 
 //COLOR SETUP
 
@@ -9,15 +10,25 @@
     width: 100%
     background: $color-info-header-background
 
+    @media screen and ( max-width: $breakpoint-mobile-header  )
+        margin-bottom: 1rem
+        background: $color-sticky-info-header-bg
+
     .container
         padding: .2rem 3rem
         display: flex
         justify-content: center
+        @media screen and ( max-width: $breakpoint-mobile-header  )
+            padding: .2rem .2rem
 
         .header-text
             font-size: 120%
             color: $color-info-header-text
             margin: 0 3rem
+
+            @media screen and ( max-width: $breakpoint-mobile-header  )
+                font-size: 90%
+                
 
 .info-header-sticky
     background-color: $color-sticky-info-header-bg

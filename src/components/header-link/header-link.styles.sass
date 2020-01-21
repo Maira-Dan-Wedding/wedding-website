@@ -17,6 +17,7 @@ $color-header-border: #cead97
     @media only screen and ( max-width: $breakpoint-mobile-header )
         display: block
         position: static
+        padding: 0
 
     .header-link
         display: inline-block
@@ -35,6 +36,7 @@ $color-header-border: #cead97
         @media only screen and (max-width: $breakpoint-mobile-header)
             text-align: center
             font-size: 200%
+            padding: 1.5rem
 
 
         &:hover,
@@ -50,6 +52,11 @@ $color-header-border: #cead97
         .dropdown-icon
             transform: rotate(90deg)
             display: inline-block
+
+            @media only screen and (max-width: $breakpoint-mobile-header)
+                transform: rotate(0deg)
+                
+
 
         .dropdown-hidden
             @media only screen and (max-width: $breakpoint-mobile-header)
@@ -92,9 +99,15 @@ $color-header-border: #cead97
         padding: 1.8rem 3rem .5rem 3rem
         border-bottom: 5px solid $color-lighter-red
 
+        @media only screen and (max-width: $breakpoint-mobile-header)
+            padding: 1.5rem
+
         &:hover,
         &:active
             border-bottom: 5px solid $color-sticky-header-border
+            
+            @media only screen and (max-width: $breakpoint-mobile-header)
+                border-bottom: none
 
 
 

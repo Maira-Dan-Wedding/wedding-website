@@ -3,10 +3,10 @@ import { withRouter } from 'react-router-dom';
 
 import './dropdown.styles.sass'; 
 
-const Dropdown = ({links, match, history, hidden, toggleDropdown}) => {
+const Dropdown = ({links, match, history, hidden, toggleDropdown, isSticky}) => {
 
     return(
-        <ul className={`dropdown ${ hidden ? "dropdown-hidden" : ""}`}>
+        <ul className={`dropdown ${ hidden ? "dropdown-hidden" : ""} ${isSticky ? "dropdown-sticky" : ""}`}>
             <li className="dropdown-close-icon">&lsaquo;</li>
             {links.map(({linkUrl, linkNameEn, linkNamePt}) => (
                 <li className="dropdown-link" onClick={() => {toggleDropdown(); return history.push(`${match.url}${linkUrl}`)}}>
