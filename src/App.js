@@ -7,6 +7,7 @@ import Header from './components/header/header.component';
 import Homepage from './pages/homepage/homepage.component';
 import Rsvp from './pages/rsvp/rsvp.component';
 import WhatToDo from './pages/what-to-do/what-to-do.component';
+import Footer from './components/footer/footer.component';
 
 function App() {
   const [isSticky, setSticky] = useState(false);
@@ -36,6 +37,7 @@ function App() {
           return null
         }} />
       </Switch>
+      <Footer/>
     </div>
   );
 };

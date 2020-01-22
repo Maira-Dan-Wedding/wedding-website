@@ -1,0 +1,36 @@
+//IMPORTING VARIABLES 
+@import '../../configs/styles/breakpoints'
+
+//COLOR SETUP
+
+//Greens
+$color-date-green: #024437
+
+//Reds/Pinks
+$color-date-red: #9b5648
+
+//----------------------------------
+
+//COMPONENT RULES
+    
+.address-phone
+    display: flex
+    flex-direction: column
+    margin-bottom: 1rem
+    color: $color-date-green
+
+
+    .address, .phone
+        margin-bottom: 1rem
+        @media screen and ( max-width: $breakpoint-small-desktop )
+            text-align: center
+        
+    .subtitle
+        font-size: 130%
+        font-weight: 400
+
+
+        
+
+.alternative 
+    color: $color-date-red
