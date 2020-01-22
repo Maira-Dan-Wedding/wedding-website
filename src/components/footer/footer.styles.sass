@@ -1,5 +1,6 @@
 //IMPORTING VARIABLES
 @import '../../configs/styles/colors'
+@import '../../configs/styles/breakpoints'
 
 .footer
     width: 100%
@@ -11,6 +12,8 @@
         text-align: center    
         font-size: 150%
         color: #166439
+        @media only screen and ( max-width: $breakpoint-mobile-header )
+            font-size: 120% 
 
         #signature-link
             color: #062e18

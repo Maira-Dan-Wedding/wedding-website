@@ -23,7 +23,7 @@ const HeaderLink = ({linkUrl, sectionId , linkNamePt, linkNameEn, dropdownList, 
                     <div className="header-link" onClick={toggleDropdown}>
                         {linkNamePt} <span className="dropdown-icon">&rsaquo;</span>
                         <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
-                        <Dropdown links={dropdownList}  hidden={isDropdownHidden} toggleDropdown={toggleDropdown} isSticky={isSticky} />
+                        <Dropdown links={dropdownList}  hidden={isDropdownHidden} toggleDropdown={toggleDropdown} toggleNav={toggleNav} isSticky={isSticky} />
                     </div>
                 </div>
             ) : (
