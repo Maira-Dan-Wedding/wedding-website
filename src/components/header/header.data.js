@@ -8,14 +8,16 @@ const HEADER_DATA = [
     },
     {
         id: 2,
-        linkUrl: "#schedule",
+        linkUrl: "",
+        sectionId: "schedule",
         linkNamePt: "Programação",
         linkNameEn: "schedule",
         isMainLink: false
     },
     {
         id: 3,
-        linkUrl: "#travel",
+        linkUrl: "",
+        sectionId: "travel",
         linkNamePt: "Viagem",
         linkNameEn: "Travel",
         isMainLink: false
@@ -53,7 +55,7 @@ const HEADER_DATA = [
     },
     {
         id: 6,
-        linkUrl: "#",
+        linkUrl: "registry",
         linkNamePt: "Lista de Presentes",
         linkNameEn: "Registry",
         isMainLink: false

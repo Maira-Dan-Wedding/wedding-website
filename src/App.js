@@ -29,6 +29,10 @@ function App() {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/rsvp" component={Rsvp} />
+        <Route exact path="/registry" component={() => {
+          window.location.href= "https://www.zola.com/wedding-registry";
+          return null
+        }} />
       </Switch>
     </div>
   );

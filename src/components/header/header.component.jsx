@@ -16,7 +16,7 @@ const Header = ({isSticky}) => {
 
     return (
         <div className="full-nav">
-            <HamburguerIcon  toggleNav={toggleMobileHeader}/>
+            <HamburguerIcon  toggleNav={toggleMobileHeader} isHidden={isHidden}/>
             <div className={`header ${isSticky ? "sticky" : ""} ${isHidden ? "header-hidden" : ""}`}>
                 <InfoHeader isSticky={isSticky} />
                 <div className="inner-header">

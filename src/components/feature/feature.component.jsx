@@ -1,11 +1,16 @@
 import React from  'react'; 
 
+import CustomButton from '../custom-button/custom-button.component'
+
 import './feature.styles.sass'; 
 
 const Feature = ({children, subtitle, enSubtitle, copy, cta, links}) => (
     <div className="feature">
         <div className="icon-wrapper">{children}</div>
-        <div className="icon-subtitle">{subtitle}</div>
+        <div className="icon-subtitle">
+            {subtitle}
+            <span className="icon-subtitle-en">{enSubtitle}</span>
+        </div>
         <div className="icon-copy">{copy}</div>
         <div className="links">
             <ul className="links-list">
@@ -14,7 +19,9 @@ const Feature = ({children, subtitle, enSubtitle, copy, cta, links}) => (
                 ))}
             </ul>
         </div>
-        {cta ? {cta} : null}
+        {cta ? (
+            <CustomButton>{cta}</CustomButton>
+        ) : null}
     </div>
 )
 

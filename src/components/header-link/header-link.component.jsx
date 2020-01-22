@@ -1,16 +1,17 @@
 import React, { useState } from 'react'; 
 import { withRouter } from 'react-router-dom'; 
+import { Link } from 'react-scroll'; 
 
 import Dropdown from '../dropdown/dropdown.component'
 
 import './header-link.styles.sass'; 
 
-const HeaderLink = ({linkUrl, linkNamePt, linkNameEn, dropdownList, isMainLink, match, history, isSticky, toggleNav}) => {
+const HeaderLink = ({linkUrl, sectionId , linkNamePt, linkNameEn, dropdownList, isMainLink, match, history, isSticky, toggleNav}) => {
     const[isDropdownHidden, setIsDropdownHidden] = useState(true)
 
     const onClick = () => {
-        toggleNav();
-        return history.push(`${match.url}${linkUrl}`)
+        toggleNav();    
+        history.push(`${match.url}${linkUrl}`);
     };
 
     const toggleDropdown = () => setIsDropdownHidden(!isDropdownHidden);
@@ -27,8 +28,26 @@ const HeaderLink = ({linkUrl, linkNamePt, linkNameEn, dropdownList, isMainLink, 
                 </div>
             ) : (
                 <div className="header-link" onClick={onClick}>
-                    {linkNamePt}
-                    <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
+                    {sectionId ? (
+                        <Link
+                            spy
+                            hashSpy
+                            to={sectionId}
+                            smooth
+                            duration={1000}
+                            offset={-100}
+                            onClick={onClick}
+                        >
+                            {linkNamePt}
+                            <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
+                        </Link>
+                    ) : (
+                        <div>
+                            {linkNamePt}
+                            <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
+                        </div>
+                    )}
+
                 </div>
             )}
         </li>

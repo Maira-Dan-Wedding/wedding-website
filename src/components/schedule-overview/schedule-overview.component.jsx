@@ -10,7 +10,7 @@ const ScheduleOverview = () => {
     const [schedule] = useState(SCHEDULE_DATA);
 
     return (
-        <div className="schelude-overview">
+        <div className="schelude-overview" id="schedule">
             {schedule.map( ({id, ...otherEventProps}, index) => (
                 <Event key={id} index={index} {...otherEventProps} />
             ))}
