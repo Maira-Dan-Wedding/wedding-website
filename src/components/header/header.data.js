@@ -29,16 +29,13 @@ const HEADER_DATA = [
         linkNameEn: "Tips",
         dropdownList: [
             {
+                id: 1,
                 linkUrl: "#",
                 linkNamePt: "Hospedagem",
                 linkNameEn: "Accomodation",
             },
             {
-                linkUrl: "#",
-                linkNamePt: "Restaurantes",
-                linkNameEn: "Restaurants",
-            },
-            {
+                id: 2,
                 linkUrl: "#",
                 linkNamePt: "O que fazer",
                 linkNameEn: "What to do",

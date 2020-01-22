@@ -1,10 +1,10 @@
 import React, {useState} from 'react'; 
 
-import { HERO } from './restaurants.data'; 
+import { HERO } from './what-to-do.data'; 
 
 import CoverImage from '../../components/cover-image/cover-image.component'; 
 
-const Restaurants = () => {
+const WhatToDo = () => {
     const [hero] = useState()
 
     return (
@@ -18,4 +18,4 @@ const Restaurants = () => {
     )
 }
 
-export default Restaurants; 
+export default WhatToDo; 
