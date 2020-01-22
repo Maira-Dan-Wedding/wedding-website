@@ -1,7 +1,13 @@
+@import '../../configs/styles/breakpoints'
+
 .form
     .subtitle
         font-size: 150%
         padding: 1rem 0
     form 
         width: 60%
+        
+        @media screen and ( max-width: $breakpoint-mobile-header )
+            width: 85%
+            
         
