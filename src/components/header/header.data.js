@@ -36,7 +36,7 @@ const HEADER_DATA = [
             },
             {
                 id: 2,
-                linkUrl: "#",
+                linkUrl: "what-to-do",
                 linkNamePt: "O que fazer",
                 linkNameEn: "What to do",
             },

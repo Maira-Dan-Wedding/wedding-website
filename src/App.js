@@ -6,6 +6,7 @@ import './App.styles.sass';
 import Header from './components/header/header.component'; 
 import Homepage from './pages/homepage/homepage.component';
 import Rsvp from './pages/rsvp/rsvp.component';
+import WhatToDo from './pages/what-to-do/what-to-do.component';
 
 function App() {
   const [isSticky, setSticky] = useState(false);
@@ -29,6 +30,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/rsvp" component={Rsvp} />
+        <Route exact path="/what-to-do" component={WhatToDo} />
         <Route exact path="/registry" component={() => {
           window.location.href= "https://www.zola.com/wedding-registry";
           return null
