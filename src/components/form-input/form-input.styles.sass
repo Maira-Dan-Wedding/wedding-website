@@ -1,5 +1,8 @@
-$sub-color: grey
+//IMPORTING VARIABLES
+@import '../../configs/styles/breakpoints'
+
 $main-color: black
+$sub-color: grey
 
 @mixin shrinkLabel 
     top: -14px
@@ -9,15 +12,20 @@ $main-color: black
 
 .group
     position: relative
-    margin: 45px 0
+    margin: 45px 1rem 45px 0
+    width: 80%
+    display: inline-block
+    @media only screen and ( max-width: $breakpoint-mobile-header )
+        margin-bottom: 0
+        
 
     .form-input  
         background: none;
-        background-color: white
+        background-color: inherit
         color: $sub-color
         font-size: 18px
         padding: 10px 10px 10px 5px
-        display: block
+        display: flex
         width: 100%
         border: none
         border-radius: 0

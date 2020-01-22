@@ -21,11 +21,19 @@ $color-welcome-border: #ccb7aa
         font-size: 500%
         padding: 4rem
 
+        @media only  screen and ( max-width: $breakpoint-mobile-header )
+            font-size: 300%
+
     .subtitle
         text-align: center
         font-size: 300%
         color: $color-welcome-subtitle
         margin: 2rem 0
+        padding: 0 1rem
+
+        @media only  screen and ( max-width: $breakpoint-large-desktop  )
+            font-size: 150%
+
 
     .box
         margin-top: 2rem

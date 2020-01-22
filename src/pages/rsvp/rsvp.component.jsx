@@ -13,7 +13,7 @@ import Popup from '../../components/popup/popup.component';
 const Rsvp = () => {
     const [hero] = useState(HERO);
     const [formCopy] = useState(FORM_COPY)
-    const [name, setName] = useState("null");
+    const [name, setName] = useState("");
     const [popupStatus, setPopupStatus] = useState(null);
 
     const handleChange = e => {

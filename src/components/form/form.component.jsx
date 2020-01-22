@@ -24,14 +24,14 @@ const Form = ({title, subtitle, instructionPt, instructionEn, handleChange, hand
                 <form onSubmit={handleSubmit}>
                     <FormInput
                         handleChange={handleChange}
-                        label="Primeiro e Último Nome || First and Last Name"
+                        label="First and Last"
                         type="text"
                         value={name}
                     />
                     <CustomButton
                         type="submit"
                     >
-                        -->
+                        Submit
                     </CustomButton>
                 </form>
             </Container>
