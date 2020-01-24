@@ -30,9 +30,10 @@ const HEADER_DATA = [
         dropdownList: [
             {
                 id: 1,
-                linkUrl: "#",
+                linkUrl: "https://www.vectotravel.com",
                 linkNamePt: "Hospedagem",
                 linkNameEn: "Accomodation",
+                outsideLink: true
             },
             {
                 id: 2,
@@ -52,9 +53,10 @@ const HEADER_DATA = [
     },
     {
         id: 6,
-        linkUrl: "registry",
+        linkUrl: "https://www.zola.com/registry/mairaanddan",
         linkNamePt: "Lista de Presentes",
         linkNameEn: "Registry",
+        outsideLink: true,
         isMainLink: false
     },
     {

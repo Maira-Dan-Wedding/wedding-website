@@ -6,7 +6,7 @@
 //COMPONENT RULES    
 .welcome
     background: 
-    min-height: 100vh
+    min-height: 70vh
     position: relative
 
     .title
@@ -31,7 +31,7 @@
     .box
         margin-top: 2rem
         padding: 1rem 9rem
-        margin-bottom: 2rem
+        margin-bottom: 6rem
 
         @media only  screen and ( max-width: $breakpoint-large-desktop  )
             padding: 1rem 2rem 
@@ -39,12 +39,14 @@
         .copy
             color: $color-welcome-copy
 
-        .welcome-pt
+        .welcome-pt,
+        .welcome-en
             font-size: 170%
             line-height: 140%
 
-        .welcome-en
-            font-size: 130%
-            line-height: 240%
+        .welcome-pt
+            line-height: 160%
 
+        .welcome-en
+            font-style: italic
 

@@ -6,7 +6,7 @@ import Dropdown from '../dropdown/dropdown.component'
 
 import './header-link.styles.sass'; 
 
-const HeaderLink = ({linkUrl, sectionId , linkNamePt, linkNameEn, dropdownList, isMainLink, match, history, isSticky, toggleNav}) => {
+const HeaderLink = ({linkUrl, sectionId, outsideLink, linkNamePt, linkNameEn, dropdownList, isMainLink, match, history, isSticky, toggleNav}) => {
     const[isDropdownHidden, setIsDropdownHidden] = useState(true)
 
     const onClick = () => {
@@ -27,7 +27,7 @@ const HeaderLink = ({linkUrl, sectionId , linkNamePt, linkNameEn, dropdownList, 
                     </div>
                 </div>
             ) : (
-                <div className="header-link" onClick={onClick}>
+                <div className="header-link" onClick={outsideLink ? null : onClick}>
                     {sectionId ? (
                         <Link
                             spy
@@ -41,6 +41,13 @@ const HeaderLink = ({linkUrl, sectionId , linkNamePt, linkNameEn, dropdownList, 
                             {linkNamePt}
                             <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
                         </Link>
+                    ) : outsideLink ? (
+                        <div>
+                            <a href={linkUrl} className="link-anchor" target="_blank" rel="noopener noreferrer">
+                                {linkNamePt}
+                                <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
+                            </a>
+                        </div>
                     ) : (
                         <div>
                             {linkNamePt}

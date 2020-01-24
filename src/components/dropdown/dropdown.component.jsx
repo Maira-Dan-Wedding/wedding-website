@@ -8,10 +8,30 @@ const Dropdown = ({links, match, history, hidden, toggleDropdown, toggleNav, isS
     return(
         <ul className={`dropdown ${ hidden ? "dropdown-hidden" : ""} ${isSticky ? "dropdown-sticky" : ""}`}>
             <li className="dropdown-close-icon">&lsaquo;</li>
-            {links.map(({id, linkUrl, linkNameEn, linkNamePt}) => (
-                <li key={id} className="dropdown-link" onClick={() => {toggleNav(); toggleDropdown(); return history.push(`${match.url}${linkUrl}`)}}>
-                    {linkNamePt}
-                    <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
+            {links.map(({id, linkUrl, linkNameEn, linkNamePt, outsideLink}) => (
+                <li 
+                    key={id} 
+                    className="dropdown-link" 
+                    onClick={outsideLink ? null : 
+                        () => {
+                            toggleNav(); 
+                            toggleDropdown(); 
+                            return history.push(`${match.url}${linkUrl}`)
+                        }
+                    }
+                >
+                    {outsideLink? (
+                        <a href={linkUrl} className="link-anchor" target="_blank" rel="noopener noreferrer">
+                            {linkNamePt}
+                            <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
+                        </a>
+                    ) : (
+                        <div>
+                            {linkNamePt}
+                            <span className="link-en">{linkNameEn ? linkNameEn : <div>&nbsp;</div>}</span>
+                        </div>
+                    )}
+      
                 </li>
             ))}
         </ul>

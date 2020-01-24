@@ -33,7 +33,11 @@ function App() {
         <Route exact path="/rsvp" component={Rsvp} />
         <Route exact path="/what-to-do" component={WhatToDo} />
         <Route exact path="/registry" component={() => {
-          window.location.href= "https://www.zola.com/wedding-registry";
+          window.location.href= "https://www.zola.com/registry/mairaanddan";
+          return null
+        }} />
+        <Route exact path="/accomodations" component={() => {
+          window.location.href= "https://www.vectotravel.com";
           return null
         }} />
       </Switch>
