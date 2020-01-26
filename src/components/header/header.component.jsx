@@ -20,7 +20,6 @@ const Header = ({isSticky}) => {
             <div className={`header ${isSticky ? "sticky" : ""} ${isHidden ? "header-hidden" : ""}`}>
                 <InfoHeader isSticky={isSticky} />
                 <div className="inner-header">
-                    <h1 className="main-title"><a href="#">Maíra &amp; Dan</a></h1>
                     <nav>
                         <HeaderNav linkData={linkData} isSticky={isSticky} toggleNav={toggleMobileHeader} />
                     </nav>

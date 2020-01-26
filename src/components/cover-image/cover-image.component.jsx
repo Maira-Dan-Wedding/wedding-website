@@ -2,11 +2,10 @@ import React from 'react';
 
 import './cover-image.styles.sass'; 
 
-
-const CoverImage = ({imgUrl, filter, height, position, text}) => {
+const CoverImage = ({bgImg, filter, height, position, text}) => {
 
     const styles = {
-        backgroundImage: filter ? `linear-gradient(${filter}), url(${imgUrl})` : `url(${imgUrl})`,
+        backgroundImage: filter ? `linear-gradient(${filter}), url(${bgImg})` : `url(${bgImg})`,
         backgroundPosition: position,
         minHeight: height
     };

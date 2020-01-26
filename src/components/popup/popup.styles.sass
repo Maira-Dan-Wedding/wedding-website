@@ -1,4 +1,5 @@
 @import '../../configs/styles/colors'
+@import '../../configs/styles/breakpoints'
 
 #simple-modal-title
     color: $color-popup-title
@@ -9,7 +10,7 @@
 .popup-subtitle-en
     font-size: 130%
     color: $color-popup-subtitle
-    
+
 .error-popup
     background-color: $color-darker-red !important
 
@@ -20,6 +21,11 @@
         .popup-subtitle-pt,
         .popup-subtitle-en
             color: #480b00
+
+.error-popup,
+.success-popup
+    @media screen and ( max-width: $breakpoint-mobile-header )
+        width: 85vw !important
 
 .popup-email
     color: #ffd7d0

@@ -3,10 +3,28 @@ import React from 'react';
 import Container from '@material-ui/core/Container'
 import FormInput from '../form-input/form-input.component'; 
 import CustomButton from '../custom-button/custom-button.component'; 
+import Checkbox from '@material-ui/core/Checkbox'; 
+import FormControlLabel from '@material-ui/core/FormControlLabel'; 
 
 import './form.styles.sass'; 
 
-const Form = ({title, subtitle, instructionPt, instructionEn, handleChange, handleSubmit, name}) => {
+const Form = ({
+    title, 
+    subtitle, 
+    instructionPt, 
+    instructionEn, 
+    handleChange, 
+    handleCheckbox,
+    handleSubmit, 
+    name, 
+    numberOfConfirmedGuests,
+    isAttendingWelcomeParty,
+    isAttendingWedding
+    }) => {
+
+    const styles = {
+        margin: "1rem 0"
+    }
 
     return(
         <div className="form">
@@ -23,10 +41,28 @@ const Form = ({title, subtitle, instructionPt, instructionEn, handleChange, hand
                 </div>
                 <form onSubmit={handleSubmit}>
                     <FormInput
-                        handleChange={handleChange}
-                        label="First and Last"
+                        handleChange={handleChange("name")}
+                        label="First and Last Name"
                         type="text"
                         value={name}
+                    />
+                    <FormInput
+                        handleChange={handleChange("numberOfConfirmedGuests")}
+                        label="Convidados Confirmados || Confirmed guests"
+                        type="number"
+                        value={numberOfConfirmedGuests}
+                    />
+                    <FormControlLabel
+                        control={
+                        <Checkbox style={styles} checked={isAttendingWelcomeParty} onChange={handleCheckbox('isAttendingWelcomeParty')} value={isAttendingWelcomeParty} />
+                        }
+                        label="I will attend to the Welcome Party || Confirmo presença na Welcome Party"
+                    />
+                    <FormControlLabel
+                        control={
+                        <Checkbox style={styles} checked={isAttendingWedding} onChange={handleCheckbox('isAttendingWedding')} value={isAttendingWedding} />
+                        }
+                        label="I will attend to the Wedding || Confirmo presença no casamento"
                     />
                     <CustomButton
                         type="submit"

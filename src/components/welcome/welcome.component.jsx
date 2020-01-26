@@ -11,8 +11,8 @@ const Welcome = () => {
     
     return(
         <div className="welcome">
-            <h2 className="title">Maíra &amp; Dan</h2>
-            <h3 className="subtitle">Praia de Carneiros, Pernanbuco || 13 de Novembro, 2020</h3>
+            <h2 className="title">Dan &amp; Maíra</h2>
+            <h3 className="subtitle">Praia de Carneiros, Pernambuco || 15 de Novembro, 2020</h3>
             <div className="box">
                 <Grid container spacing={4}>
 

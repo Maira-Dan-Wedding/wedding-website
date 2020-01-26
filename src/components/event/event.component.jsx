@@ -6,18 +6,18 @@ import EventInfo from '../event-info/event-info.component';
 import './event.styles.sass'; 
 
 
-const Event = ({ imgUrl, index, ...otherProps }) => {
+const Event = ({ img, index, ...otherProps }) => {
     return(
         <div className="event">
             {index%2 === 0 ? (
                 <div className="event-grid">
-                    <EventImage imgUrl={imgUrl} />
+                    <EventImage img={img} />
                     <EventInfo {...otherProps} />
                 </div>
             ) : (
                 <div className="event-grid">
                     <EventInfo alternative {...otherProps} />
-                    <EventImage alternative imgUrl={imgUrl} />
+                    <EventImage alternative img={img} />
                 </div>
             )}
 

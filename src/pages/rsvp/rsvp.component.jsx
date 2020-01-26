@@ -5,26 +5,42 @@ import './rsvp.styles.sass';
 
 import {HERO, FORM_COPY} from './rsvp.data'; 
 import {toCamelCase} from './rsvp.utils'; 
+import Hero from '../../assets/images/rsvp-hero.jpg'
 
 import CoverImage from '../../components/cover-image/cover-image.component';
 import Form from '../../components/form/form.component'
 import Popup from '../../components/popup/popup.component';
 
 const Rsvp = () => {
+    //STATE HOOKS
     const [hero] = useState(HERO);
     const [formCopy] = useState(FORM_COPY)
-    const [name, setName] = useState("");
+    const [rsvp, setRsvp] = useState({
+        name: "",
+        isAttendingWelcomeParty: false,
+        istAttendingWedding: false,
+        numberOfConfirmedGuests: 0
+    });
     const [popupStatus, setPopupStatus] = useState(null);
 
-    const handleChange = e => {
-        const { value } = e.target;
-        setName(value);
+    //DESTRUCTURING
+    const { ...rsvpInputs } = rsvp
+    const {name, isAttendingWelcomeParty, isAttendingWedding, numberOfConfirmedGuests } = rsvp; 
+
+    const handleChange = name => e => {
+        setRsvp({...rsvp, [name]: e.target.value})
+    };
+
+    const handleCheckbox = name => e => {
+        setRsvp({...rsvp, [name]: e.target.checked})
     };
 
     const resetPopup = () => setPopupStatus(null)
 
     const handleSubmit = e => {
         e.preventDefault();
+
+        if(!name) return setPopupStatus("ERROR");
 
         const nameCamel = toCamelCase(name);
         const guestRef = firestore.collection("guests").doc(nameCamel);
@@ -37,7 +53,12 @@ const Rsvp = () => {
                     if (guestData.rsvped) {
                         setPopupStatus("SUCCESS")
                     } else {
-                        transaction.update(guestRef, { rsvped: true });
+                        transaction.update(guestRef, {rsvped: true });
+                        guestRef.set({
+                            isAttendingWelcomeParty,
+                            isAttendingWedding,
+                            numberOfConfirmedGuests
+                        },{merge: true})
                         setPopupStatus("SUCCESS")
                     }
 
@@ -46,7 +67,12 @@ const Rsvp = () => {
                 }
             })
         }).then( () => {
-            setName("");
+            setRsvp({
+                name: "",
+                isAttendingWelcomeParty: false,
+                istAttendingWedding: false,
+                numberOfConfirmedGuests: 0
+            });
         }).catch(e => {
             console.log(e);
             setPopupStatus("ERROR")
@@ -55,10 +81,11 @@ const Rsvp = () => {
 
     };
 
+
     return(
         <div className="rsvp-page">
             <CoverImage 
-                imgUrl={hero.imgUrl}
+                bgImg={Hero}
                 height={hero.height}
                 position={hero.position}
                 text={hero.text}
@@ -70,8 +97,9 @@ const Rsvp = () => {
                 instructionPt={formCopy.instructionsPt}
                 instructionEn={formCopy.instructionsEn}
                 handleChange={handleChange}
+                handleCheckbox={handleCheckbox}
                 handleSubmit={handleSubmit}
-                name={name}
+                {...rsvpInputs}
             />
             {popupStatus ? (
                 <Popup 
