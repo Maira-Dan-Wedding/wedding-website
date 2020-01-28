@@ -18,7 +18,7 @@ const Rsvp = () => {
     const [rsvp, setRsvp] = useState({
         name: "",
         isAttendingWelcomeParty: false,
-        istAttendingWedding: false,
+        isAttendingWedding: false,
         numberOfConfirmedGuests: 0
     });
     const [popupStatus, setPopupStatus] = useState(null);
