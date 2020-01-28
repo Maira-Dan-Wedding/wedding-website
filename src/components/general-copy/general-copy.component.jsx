@@ -6,7 +6,7 @@ const GeneralCopy = ({titlePt, titleEn, copyPt, copyEn}) => (
     <div className="general-copy">
         <h2 className="general-copy-title">
             {titlePt}
-            {titleEn ? (<span className="general-copy-title-en">{titleEn}</span>) : null}
+            {titleEn ? (<span className="general-copy-title-en en">{titleEn}</span>) : null}
         </h2>
         {
             copyPt.map(paragraph => (

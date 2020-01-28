@@ -45,7 +45,7 @@ const HEADER_DATA = [
                 id: 3,
                 linkUrl: "extend-trip",
                 linkNamePt: "Dar uma esticadinha",
-                linkNameEn: "Expand trip",
+                linkNameEn: "Extend trip",
             }
         ],
         isMainLink: false

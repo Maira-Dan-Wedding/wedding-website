@@ -12,10 +12,12 @@ import ExtendTrip from './pages/extend-trip/extend-trip.component';
 
 function App() {
   const [isSticky, setSticky] = useState(false);
+  const [isHamburguer, setHamburguer] = useState(false);
   const ref = useRef(null);
 
   const handleScroll = () => {
       setSticky(ref.current.getBoundingClientRect().top <= -120);
+      setHamburguer(ref.current.getBoundingClientRect().top <= -50)
   };
  
   useEffect(() => {
@@ -28,7 +30,7 @@ function App() {
 
   return (
     <div ref={ref} className="App">
-      <Header isSticky={isSticky} />
+      <Header isSticky={isSticky} isHamburguer={isHamburguer} />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/rsvp" component={Rsvp} />

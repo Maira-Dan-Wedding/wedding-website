@@ -8,7 +8,7 @@ import HamburguerIcon from '../hamburguer-icon/hamburguer-icon.component';
 
 import './header.styles.sass'; 
 
-const Header = ({isSticky}) => {
+const Header = ({isSticky, isHamburguer}) => {
     const [linkData] = useState(HEADER_DATA);
     const [isHidden, setIsHidden] = useState(true)
 
@@ -16,7 +16,7 @@ const Header = ({isSticky}) => {
 
     return (
         <div className="full-nav">
-            <HamburguerIcon  toggleNav={toggleMobileHeader} isHidden={isHidden}/>
+            <HamburguerIcon  toggleNav={toggleMobileHeader} isHidden={isHidden} isHamburguer={isHamburguer}/>
             <div className={`header ${isSticky ? "sticky" : ""} ${isHidden ? "header-hidden" : ""}`}>
                 <InfoHeader isSticky={isSticky} />
                 <div className="inner-header">
