@@ -16,10 +16,10 @@ const TRAVEL_DATA = [
         enSubtitle: "Airport > Carneiros",
         copy: "90Km-55Miles -- ˜1:15h. Recife's Airport to Carneiros by Car. To book your transfer please contact:",
         links: [
-            "https://www.vectortravel.com",
+            "https://www.vectotravel.com",
         ],
         emails: [
-            "george@vectortravel.com",
+            "george@vectotravel.com",
         ],
         phones: [
             "+55 (21) 96746-5505"

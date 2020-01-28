@@ -4,7 +4,6 @@ import { firestore } from '../../firebase/firebase.utils';
 import './rsvp.styles.sass'; 
 
 import {HERO, FORM_COPY} from './rsvp.data'; 
-import {toCamelCase} from './rsvp.utils'; 
 import Hero from '../../assets/images/min/rsvp-hero-min.jpg'
 import HeroMobile from '../../assets/images/min/rsvp-hero-mobile-min.jpg'
 
@@ -40,34 +39,18 @@ const Rsvp = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-
         if(!name) return setPopupStatus("ERROR");
 
-        const nameCamel = toCamelCase(name);
-        const guestRef = firestore.collection("guests").doc(nameCamel);
+        const guestRef = firestore.collection("guests").doc(name);
 
-        return firestore.runTransaction(transaction => {
-            return transaction.get(guestRef).then(snapshot => {
-                if (snapshot.exists) {
-                    const guestData = snapshot.data()
-
-                    if (guestData.rsvped) {
-                        setPopupStatus("SUCCESS")
-                    } else {
-                        transaction.update(guestRef, {rsvped: true });
-                        guestRef.set({
-                            isAttendingWelcomeParty,
-                            isAttendingWedding,
-                            numberOfConfirmedGuests
-                        },{merge: true})
-                        setPopupStatus("SUCCESS")
-                    }
-
-                } else {
-                    setPopupStatus("ERROR")
-                }
-            })
-        }).then( () => {
+        guestRef.set({
+            rsvped: true,
+            isAttendingWelcomeParty,
+            isAttendingWedding,
+            numberOfConfirmedGuests
+        }, {merge: true})
+        .then( () => {
+            setPopupStatus("SUCCESS")
             setRsvp({
                 name: "",
                 isAttendingWelcomeParty: false,
@@ -79,9 +62,7 @@ const Rsvp = () => {
             setPopupStatus("ERROR")
 
         })
-
     };
-
 
     return(
         <div className="rsvp-page">

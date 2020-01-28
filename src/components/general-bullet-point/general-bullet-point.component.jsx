@@ -16,7 +16,7 @@ const GeneralBulletPoint = ({listPt, listEn}) => (
                 <ul className="list-en">
                     {
                         listEn.map(item => (
-                            <li className="bullet-point">{item}</li>
+                            <li className="bullet-point en">{item}</li>
                         ))
                     }
                 </ul>

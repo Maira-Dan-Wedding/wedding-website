@@ -5,8 +5,6 @@ import './cover-image.styles.sass';
 const CoverImage = ({bgImg, bgImgMobile, filter, height, position, text}) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   
-    console.log(windowWidth)
-
     const handleWindowResize = () => {
       setWindowWidth(window.innerWidth);
     }

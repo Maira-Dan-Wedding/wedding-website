@@ -29,7 +29,6 @@ const Popup = ({status, resetPopup}) => {
 
     switch(status) {
         case "ERROR": 
-            console.log("ERROR")
             return (
                 <Modal
                     aria-labelledby="simple-modal-title"
