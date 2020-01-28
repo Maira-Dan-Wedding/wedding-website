@@ -17,7 +17,7 @@ function App() {
   const handleScroll = () => {
       setSticky(ref.current.getBoundingClientRect().top <= -120);
   };
-
+ 
   useEffect(() => {
       window.addEventListener("scroll", handleScroll);
 

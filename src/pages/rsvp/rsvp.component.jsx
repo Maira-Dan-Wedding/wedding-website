@@ -5,7 +5,8 @@ import './rsvp.styles.sass';
 
 import {HERO, FORM_COPY} from './rsvp.data'; 
 import {toCamelCase} from './rsvp.utils'; 
-import Hero from '../../assets/images/rsvp-hero.jpg'
+import Hero from '../../assets/images/min/rsvp-hero-min.jpg'
+import HeroMobile from '../../assets/images/min/rsvp-hero-mobile-min.jpg'
 
 import CoverImage from '../../components/cover-image/cover-image.component';
 import Form from '../../components/form/form.component'
@@ -86,6 +87,7 @@ const Rsvp = () => {
         <div className="rsvp-page">
             <CoverImage 
                 bgImg={Hero}
+                bgImgMobile={HeroMobile}
                 height={hero.height}
                 position={hero.position}
                 text={hero.text}

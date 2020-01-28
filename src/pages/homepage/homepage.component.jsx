@@ -4,8 +4,10 @@ import './homepage.styles.sass';
 
 
 import IMAGES from './images.data.js'
-import Hero from '../../assets/images/maira-hero-img.jpg';
-import Img from '../../assets/images/praia-de-carneiros.jpg';
+import Hero from '../../assets/images/min/maira-hero-img-min.jpg';
+import HeroMobile from '../../assets/images/min/maira-hero-img-mobile-min.jpg'
+import Img from '../../assets/images/min/praia-de-carneiros-min.jpg';
+import ImgMobile from '../../assets/images/min/praia-de-carneiros-mobile-min.jpg';
 
 
 import Welcome from '../../components/welcome/welcome.component';
@@ -20,6 +22,7 @@ const Homepage = () =>{
         <div className="homepage">
             <CoverImage
                 bgImg={Hero}
+                bgImgMobile={HeroMobile}
                 height={images.img1.height}
                 position={images.img1.position}
                 text={images.img1.text}
@@ -27,6 +30,7 @@ const Homepage = () =>{
             <Welcome />
             <CoverImage
                 bgImg={Img}
+                bgImgMobile={ImgMobile}
                 height={images.img2.height}
                 position={images.img2.position}
             />

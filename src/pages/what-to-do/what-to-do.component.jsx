@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { HERO, COPY, LIST } from './what-to-do.data'; 
 
 import Hero from '../../assets/images/igreja-praia-1500px-min.jpg'
+import HeroMobile from '../../assets/images/min/igreja-praia-1500px-mobile-min.jpg'
 
 import CoverImage from '../../components/cover-image/cover-image.component'; 
 import GeneralCopy from '../../components/general-copy/general-copy.component';
@@ -20,7 +21,7 @@ const WhatToDo = () => {
 
     return (
         <div className="what-to-do-page">
-            <CoverImage bgImg={Hero} {...heroObj} />
+            <CoverImage bgImg={Hero} bgImgMobile={HeroMobile} {...heroObj} />
             <Container>
                 <GeneralCopy {...copyObj} />
                 <GenerealBulletPoint { ...listObj} />
