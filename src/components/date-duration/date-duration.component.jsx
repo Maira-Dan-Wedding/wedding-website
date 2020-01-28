@@ -7,13 +7,13 @@ const DateDuration = ({ ptDate, ptWeekday, enDate, enWeekday, ptDuration, enDura
 
         <div className="date">
             <span className="pt-span">{`${ptWeekday}, ${ptDate}`} </span> 
-            <span className="en-span">{`${enWeekday}, ${enDate}`}</span>
+            <span className="en-span en">{`${enWeekday}, ${enDate}`}</span>
         </div>
 
         {ptDuration ? (
             <div className="duration">
                 <span className="pt-span">{`${ptDuration}`}</span>  
-                <span className="en-span">{`${enDuration}`}</span>
+                <span className="en-span en">{`${enDuration}`}</span>
             </div>
         ) : null}
 

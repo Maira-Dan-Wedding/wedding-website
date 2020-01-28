@@ -8,7 +8,7 @@ const EventCopy = ({ptCopy, enCopy}) => (
             <p className="paragraph">{ptCopy}</p>
         </div>
         <div className="copy">
-            <p className="paragraph">{enCopy}</p>
+            <p className="paragraph en">{enCopy}</p>
         </div>
     </div>
 );

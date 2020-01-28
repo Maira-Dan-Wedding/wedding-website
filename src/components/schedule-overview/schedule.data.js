@@ -29,14 +29,14 @@ const SCHEDULE_DATA = [
         pt: {
             date: "14 de Novembro",
             weekday: "Sábado",
-            duration: "16:00 às 22:00",
+            duration: "17:00 às 22:00",
             attire: "Praia Casual. Não recomendamos salto",
             copy: ""
         },
         en: {
             date: "November 14th",
             weekday: "Saturday",
-            duration: "4pm until 10pm",
+            duration: "5pm until 10pm",
             attire: "Casual beach attire. We do not recommend high heels.",
             copy: ""
         },
@@ -50,14 +50,14 @@ const SCHEDULE_DATA = [
         pt: {
             date: "15 de Novembro",
             weekday: "Domingo",
-            duration: "15:30 às 17:30",
+            duration: "15:30",
             attire: "Homens sem gravata, blazers opcionais. Mulheres: Salto grosso é mais do que bem vindo. À noite pode ventar, sugerimos levar uma pashmina.",
             copy: "A festa não será no mesmo local da cerimônia e ambas celebrações irão começar pontualmente, por favor não se atrase. Chegue cedo para tirar fotos lindas! A cerimônia começará às 15:30 em ponto."
         },
         en: {
             date: "November 15th",
             weekday: "Sunday",
-            duration: "3:30pm until 5:30pm",
+            duration: "3:30pm",
             attire: "​Beach formal attire. Men no need for ties and women please avoid stilettos. Keep in mind it’s pretty windy at night so bring a pashmina or blazer just in case.",
             copy: "The ceremony and party will start on time. Please don’t be late. The ceremony will start at 3:30pm sharp. Arrive early so you can take beautiful pictures"
         },
@@ -65,14 +65,14 @@ const SCHEDULE_DATA = [
 
     {
         id: 4,
-        title: "Festa || Party", 
+        title: "Recepção || Reception", 
         address: "Pousada Paraíso dos Carneiros -- PE-072, Tamandaré - PE, 55578-000, Brasil",
         phone: "+55 81 98224-5393", 
         imgUrl: "maira-hero-img.jpg",
         pt: {
             date: "15 de Novembro",
             weekday: "Domingo",
-            duration: "17:30 até o Sol nascer!",
+            duration: "17:30 até o Sol raiar!",
             attire: "Homens sem gravata, blazers opcionais. Mulheres: Salto grosso é mais do que bem vindo. À noite pode ventar, sugerimos levar uma pashmina.",
             copy: ""
         },
