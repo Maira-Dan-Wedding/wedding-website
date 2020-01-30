@@ -39,7 +39,9 @@
 
         .copy
             color: $color-welcome-copy
-            padding-right: .3rem
+            @media only  screen and ( max-width: $breakpoint-large-desktop  )
+                padding-right: .3rem
+                padding-left: 1rem
 
         .welcome-pt,
         .welcome-en
