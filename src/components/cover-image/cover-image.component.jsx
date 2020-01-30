@@ -20,6 +20,7 @@ const CoverImage = ({bgImg, bgImgMobile, filter, height, position, text}) => {
     const styles = {
         backgroundImage: filter ? `linear-gradient(${filter}), url(${windowWidth >= 650 ? bgImg : bgImgMobile})` : `url(${windowWidth >= 650 ? bgImg : bgImgMobile})`,
         backgroundPosition: position,
+        
         minHeight: height
     };
 
