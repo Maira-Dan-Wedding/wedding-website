@@ -10,14 +10,14 @@ const SCHEDULE_DATA = [
             weekday: "Sexta",
             duration: "",
             attire: "",
-            copy: "Dia livre para vocês chegarem com calma, entrarem no clima nordestino e relaxarem na praia antes do grande dia! O aeroporto mais próximo é o de Recife que fica há 1hr15 da praia dos Carneiros."
+            copy: "Dia livre para vocês chegarem com calma, entrarem no clima nordestino e relaxarem na praia antes do grande dia! O aeroporto mais próximo é o de Recife que fica há 1hr15 da praia dos Carneiros.Uber e taxi estarão disponíveis desde o aeroporto, e transfers podem ser reservados com antecedência através da agência Vecto no email george@vectotravel.com. A agência também pode ajudar com reserva de voos e estadia."
         },
         en: {
             date: "November 13th",
             weekday: "Friday",
             duration: "",
             attire: "",
-            copy: "Free day. Plan accordingly your arrival at paradise so you can get rid of the jet lag and join us at the beach or relax by the pool before the party weekend starts. Keep in mind the closest airport is Recife which is 1hr15 away from Carneiros Beach"
+            copy: "Free day. Plan accordingly for your arrival in paradise so you can get rid of the jet lag and join us at the beach or relax by the pool before the party weekend starts. Keep in mind the closest airport is Recife which is 1hr15 away from Carneiros Beach. Uber and taxi will be available from the airport and transfers can be arranged in advance with our preferred agency Vecto by emailing george@vectotravel.com. The agency is also available to help you with flights and accommodation."
         },
     },
     {
@@ -29,16 +29,16 @@ const SCHEDULE_DATA = [
         pt: {
             date: "14 de Novembro",
             weekday: "Sábado",
-            duration: "17:00 às 22:00",
+            duration: "17:00",
             attire: "Praia Casual. Não recomendamos salto",
-            copy: ""
+            copy: "​Vamos celebrar um sunset inesquecível!"
         },
         en: {
             date: "November 14th",
             weekday: "Saturday",
-            duration: "5pm until 10pm",
+            duration: "5pm",
             attire: "Casual beach attire. We do not recommend high heels.",
-            copy: ""
+            copy: "Let’s celebrate an unforgettable sunset!"
         },
     },
     {
