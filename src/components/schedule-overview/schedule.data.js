@@ -10,7 +10,7 @@ const SCHEDULE_DATA = [
             weekday: "Sexta",
             duration: "",
             attire: "",
-            copy: "Dia livre para vocês chegarem com calma, entrarem no clima nordestino e relaxarem na praia antes do grande dia! O aeroporto mais próximo é o de Recife que fica há 1hr15 da praia dos Carneiros.Uber e taxi estarão disponíveis desde o aeroporto, e transfers podem ser reservados com antecedência através da agência Vecto no email george@vectotravel.com. A agência também pode ajudar com reserva de voos e estadia."
+            copy: "Dia livre para vocês chegarem com calma, entrarem no clima nordestino e relaxarem na praia antes do grande dia! O aeroporto mais próximo é o de Recife que fica há 1hr15 da praia dos Carneiros. Uber e taxi estarão disponíveis desde o aeroporto, e transfers podem ser reservados com antecedência através da agência Vecto no email george@vectotravel.com. A agência também pode ajudar com reserva de voos e estadia."
         },
         en: {
             date: "November 13th",

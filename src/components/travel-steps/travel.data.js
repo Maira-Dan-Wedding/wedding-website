@@ -14,7 +14,7 @@ const TRAVEL_DATA = [
         icon: "car",
         subtitle: "Aeroporto > Carneiros",
         enSubtitle: "Airport > Carneiros",
-        copy: "90Km-55Miles -- ˜1:15h. Recife's Airport to Carneiros by Car. To book your transfer please contact:",
+        copy: "90Km-55Miles -- ˜1:15h. Recife fica mais ou menos 1:30h de carro até Carneiros. Para reservar seu transfer entre em contato com: Recife's Airport to Carneiros by Car. To book your transfer please contact:",
         links: [
             "https://www.vectotravel.com",
         ],
