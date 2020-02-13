@@ -67,7 +67,7 @@ const Form = ({
                     />
                     <FormControlLabel
                         control={
-                        <Checkbox style={styles} checked={willNotGot} onChange={handleCheckbox('willNotGo')} value={willNotGo} />
+                        <Checkbox style={styles} checked={willNotGo} onChange={handleCheckbox('willNotGo')} value={willNotGo} />
                         }
                         label="Regrettably I won't be able to attend || Infelizemente, não poderei comparecer"
                     />
