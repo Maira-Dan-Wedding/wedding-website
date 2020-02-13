@@ -42,8 +42,9 @@ const Rsvp = () => {
         e.preventDefault();
         if(!name) return setPopupStatus("ERROR");
 
+
         if (willNotGo) {
-            const notGuestRef = firestore.collection("not-guests").doc(name);
+            const notGuestRef = firestore.collection("not-going").doc(name);
 
             notGuestRef.set({
                 status: "Won't be able to go"
@@ -54,6 +55,7 @@ const Rsvp = () => {
                     name: "",
                     isAttendingWelcomeParty: false,
                     istAttendingWedding: false,
+                    willNotGo: false,
                     numberOfConfirmedGuests: 0
                 });
             }).catch(e => {

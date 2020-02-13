@@ -69,7 +69,7 @@ const Form = ({
                         control={
                         <Checkbox style={styles} checked={willNotGo} onChange={handleCheckbox('willNotGo')} value={willNotGo} />
                         }
-                        label="Regrettably I won't be able to attend || Infelizemente, não poderei comparecer"
+                        label="Regrettably, I won't be able to attend || Infelizemente, não poderei comparecer"
                     />
                     <CustomButton
                         type="submit"
