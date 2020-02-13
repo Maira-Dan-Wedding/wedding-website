@@ -26,7 +26,7 @@ const Rsvp = () => {
 
     //DESTRUCTURING
     const { ...rsvpInputs } = rsvp
-    const {name, isAttendingWelcomeParty, isAttendingWedding, numberOfConfirmedGuests } = rsvp; 
+    const {name, isAttendingWelcomeParty, isAttendingWedding, numberOfConfirmedGuests, willNotGo } = rsvp; 
 
     const handleChange = name => e => {
         setRsvp({...rsvp, [name]: e.target.value})
