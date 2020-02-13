@@ -19,6 +19,7 @@ const Rsvp = () => {
         name: "",
         isAttendingWelcomeParty: false,
         isAttendingWedding: false,
+        willNotGo: false,
         numberOfConfirmedGuests: 0
     });
     const [popupStatus, setPopupStatus] = useState(null);
@@ -41,27 +42,48 @@ const Rsvp = () => {
         e.preventDefault();
         if(!name) return setPopupStatus("ERROR");
 
-        const guestRef = firestore.collection("guests").doc(name);
+        if (willNotGo) {
+            const notGuestRef = firestore.collection("not-guests").doc(name);
 
-        guestRef.set({
-            rsvped: true,
-            isAttendingWelcomeParty,
-            isAttendingWedding,
-            numberOfConfirmedGuests
-        }, {merge: true})
-        .then( () => {
-            setPopupStatus("SUCCESS")
-            setRsvp({
-                name: "",
-                isAttendingWelcomeParty: false,
-                istAttendingWedding: false,
-                numberOfConfirmedGuests: 0
+            notGuestRef.set({
+                status: "Won't be able to go"
+            }, {merge: true})
+            .then( () => {
+                setPopupStatus("SUCCESS_NOT_GUEST")
+                setRsvp({
+                    name: "",
+                    isAttendingWelcomeParty: false,
+                    istAttendingWedding: false,
+                    numberOfConfirmedGuests: 0
+                });
+            }).catch(e => {
+                console.log(e);
+                setPopupStatus("ERROR")
+
             });
-        }).catch(e => {
-            console.log(e);
-            setPopupStatus("ERROR")
+        } else {
+            const guestRef = firestore.collection("guests").doc(name);
 
-        })
+            guestRef.set({
+                rsvped: true,
+                isAttendingWelcomeParty,
+                isAttendingWedding,
+                numberOfConfirmedGuests
+            }, {merge: true})
+            .then( () => {
+                setPopupStatus("SUCCESS")
+                setRsvp({
+                    name: "",
+                    isAttendingWelcomeParty: false,
+                    istAttendingWedding: false,
+                    numberOfConfirmedGuests: 0
+                });
+            }).catch(e => {
+                console.log(e);
+                setPopupStatus("ERROR")
+    
+            })
+        };
     };
 
     return(

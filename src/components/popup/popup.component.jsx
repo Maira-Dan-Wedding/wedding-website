@@ -83,6 +83,33 @@ const Popup = ({status, resetPopup}) => {
                 </Modal>
             )
 
+        case "SUCCESS_NOT_GUEST":
+            return (
+                <Modal
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    open={open}
+                    onClose={handleClose}
+                >
+                    <div className={`${classes.paper} success-popup`}>
+                        <h2 id="simple-modal-title">OBRIGADO || THANK YOU</h2>
+                        <div className="copy">
+                            <p className="paragraph popup-subtitle-pt">Ahh :/ Sentimos muito que não poderá comparecer, mas obrigrado por nos avisar!</p>
+                        </div>
+                        <div className="copy">
+                            <p className="paragraph popup-subtitle-en">Ohh :/ We're sorry you won't be able to make it, but thank you for letting us know!</p>
+                        </div>
+
+                        <div className="copy">
+                            <p className="paragraph popup-instructions-pt"></p>
+                        </div>
+                        <div className="copy">
+                            <p className="paragraph popup-instructions-en"></p>
+                        </div>
+                    </div>
+                </Modal>
+            )
+
         default: 
             return null;
     }

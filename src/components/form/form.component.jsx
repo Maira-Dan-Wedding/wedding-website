@@ -19,7 +19,8 @@ const Form = ({
     name, 
     numberOfConfirmedGuests,
     isAttendingWelcomeParty,
-    isAttendingWedding
+    isAttendingWedding,
+    willNotGo,
     }) => {
 
     const styles = {
@@ -63,6 +64,12 @@ const Form = ({
                         <Checkbox style={styles} checked={isAttendingWedding} onChange={handleCheckbox('isAttendingWedding')} value={isAttendingWedding} />
                         }
                         label="I will attend to the Wedding || Confirmo presença no casamento"
+                    />
+                    <FormControlLabel
+                        control={
+                        <Checkbox style={styles} checked={willNotGot} onChange={handleCheckbox('willNotGo')} value={willNotGo} />
+                        }
+                        label="Regrettably I won't be able to attend || Infelizemente, não poderei comparecer"
                     />
                     <CustomButton
                         type="submit"
