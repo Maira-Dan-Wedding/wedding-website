@@ -46,10 +46,10 @@ const Popup = ({status, resetPopup}) => {
                         </div>
 
                         <div className="copy">
-                            <p className="paragraph popup-instructions-pt">Verifique se inseriu o nome como especificado nas instruções. Caso o erro persista, por favor envie um email para <span className="popup-email">carneirosmairaedan@gmail.com </span></p>
+                            <p className="paragraph popup-instructions-pt">Verifique se inseriu o nome como especificado nas instruções. Caso o erro persista, por favor envie um email para <span className="popup-email">carneirosdanmaira@gmail.com </span></p>
                         </div>
                         <div className="copy">
-                            <p className="paragraph popup-instructions-en">Make sure that you have followed the RSVP instructions. If the error persist, please send us an email at <span className="popup-email">carneirosmairaedan@gmail.com </span></p>
+                            <p className="paragraph popup-instructions-en">Make sure that you have followed the RSVP instructions. If the error persist, please send us an email at <span className="popup-email">carneirosdanmaira@gmail.com </span></p>
                         </div>
 
                     </div>
