@@ -10,7 +10,7 @@ const AddressPhone = ({phone, address, alternative}) => (
         }
 
         {phone ? (
-            <div className="phone"><span className="subtitle">Phone:</span> {phone}</div>
+            <div className="phone"><span className="subtitle">Phone:</span> <span dangerouslySetInnerHTML={{ __html: phone}}/></div>
         ) : null
         }
 

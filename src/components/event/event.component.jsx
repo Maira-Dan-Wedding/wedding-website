@@ -9,7 +9,7 @@ import './event.styles.sass';
 const Event = ({ img, index, ...otherProps }) => {
     return(
         <div className="event">
-            {index%2 === 0 ? (
+            {index % 2 === 0 ? (
                 <div className="event-grid">
                     <EventImage img={img} />
                     <EventInfo {...otherProps} />

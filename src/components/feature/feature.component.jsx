@@ -11,7 +11,7 @@ const Feature = ({children, subtitle, enSubtitle, copy, cta, links, emails, phon
             {subtitle}
             <span className="icon-subtitle-en">{enSubtitle}</span>
         </div>
-        <div className="icon-copy">{copy}</div>
+        <div className="icon-copy" dangerouslySetInnerHTML={{ __html: copy}} />
         <div className="links">
             <ul className="links-list">
                 {links.map(link => (

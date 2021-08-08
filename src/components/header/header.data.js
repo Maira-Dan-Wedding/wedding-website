@@ -11,7 +11,7 @@ const HEADER_DATA = [
         linkUrl: "",
         sectionId: "schedule",
         linkNamePt: "Programação",
-        linkNameEn: "schedule",
+        linkNameEn: "Schedule",
         isMainLink: false
     },
     {
@@ -28,13 +28,13 @@ const HEADER_DATA = [
         linkNamePt: "Dicas",
         linkNameEn: "Tips",
         dropdownList: [
-            {
-                id: 1,
-                linkUrl: "https://www.vectotravel.com",
-                linkNamePt: "Hospedagem",
-                linkNameEn: "Accomodation",
-                outsideLink: true
-            },
+            // {
+            //     id: 1,
+            //     linkUrl: "https://www.vectotravel.com",
+            //     linkNamePt: "Hospedagem",
+            //     linkNameEn: "Accomodation",
+            //     outsideLink: true
+            // },
             {
                 id: 2,
                 linkUrl: "what-to-do",
@@ -61,7 +61,7 @@ const HEADER_DATA = [
         id: 6,
         linkUrl: "https://www.zola.com/registry/mairaanddan",
         linkNamePt: "Lista de Presentes",
-        linkNameEn: "Registry",
+        linkNameEn: "Gifts",
         outsideLink: true,
         isMainLink: false
     },

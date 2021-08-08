@@ -6,7 +6,7 @@ const InfoHeader = ({isSticky}) => (
     <div className={`info-header ${isSticky ? "info-header-sticky": ""}`}>
         <div className="container">
             <p className="header-text">Praia de Carneiros, Pernambuco</p>
-            <p className="header-text">November 15th, 2020</p>
+            <p className="header-text">April 4th, 2022</p>
         </div>
     </div>
 );
