@@ -64,7 +64,7 @@ const SCHEDULE_DATA = [
     {
         id: 4,
         title: "Recepção || Reception", 
-        address: "Pousada Paraíso dos Carneiros -- PE-072, Tamandaré - PE, 55578-000, Brasil",
+        address: "Pousada Pontal do Carneiros -- Endereço: Sítio, Manguinhos, 5 - Praia dos Carneiros, Tamandaré - PE, 55578-000, Brasil",
         phone: "<a href='+5581982245393'>+55 81 98224-5393</a>", 
         imgUrl: "maira-hero-img.jpg",
         pt: {
