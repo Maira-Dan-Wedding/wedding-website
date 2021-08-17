@@ -13,6 +13,7 @@ const Welcome = () => {
         <div className="welcome">
             <h2 className="title">Dan &amp; Maíra</h2>
             <h3 className="subtitle">Praia de Carneiros, Pernambuco || 4 de Abril de 2022</h3>
+            <h4 className="hashtags">#dangotmairaed #casamentodanemaira</h4>
             <div className="box">
                 <Grid container spacing={4}>
 
